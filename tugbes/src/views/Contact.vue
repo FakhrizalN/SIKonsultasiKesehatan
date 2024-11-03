@@ -10,8 +10,18 @@
         <!-- Left Side: Address and Contact Info -->
         <div class="bg-white rounded-lg shadow-lg p-6 w-full lg:w-1/2 mb-8 lg:mb-0">
           <div class="mb-4">
-            <img src="map-placeholder.png" alt="Office Map" class="w-full rounded-lg mb-4" />
-            <p class="text-lg font-semibold">Office Address</p>
+            <!-- Embedded Google Map -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.5075422844845!2d116.86166826615573!3d-1.1497141536537987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df149298f826ab5%3A0x8489d5309f45c0db!2sKalimantan%20Institute%20of%20Technology!5e0!3m2!1sen!2sid!4v1730649403527!5m2!1sen!2sid"
+              width="100%"
+              height="300"
+              style="border:0; border-radius: 8px;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <p class="text-lg font-semibold mt-4">Office Address</p>
             <p>Jl. Soekarno Hatta RT.21 Km.12</p>
           </div>
           
