@@ -40,10 +40,12 @@
           <p>Dhede Kusuma Ramadhan</p>
           <p>(Chief People Officer)</p>
         </div>
-        <FAQSection />
+        
 
       </div>
+      <FAQSection />
     </div>
+    
   </div>
 </template>
 
