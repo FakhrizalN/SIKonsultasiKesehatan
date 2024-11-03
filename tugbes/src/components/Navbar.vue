@@ -5,11 +5,17 @@
     </div>
     <ul class="nav-links">
       <li v-for="item in navItems" :key="item.name">
-        <router-link 
-          :to="item.path" 
-          class="nav-link" 
-          :style="isHovered(item.name) ? { backgroundColor: theme.colors['White']['100'] } : { color: theme.colors['Main']['Dark Blue Design'] }" 
-          @mouseover="hoveredItem = item.name" 
+        <router-link
+          :to="item.path"
+          :class="isActive(item.path) ? 'active-link' : 'nav-link'"
+          :style="{
+            backgroundColor: isActive(item.path) ? theme.colors['White']['50'] : (isHovered(item.name) ? theme.colors['White']['100'] : 'transparent'),
+            color: isActive(item.path) ? theme.colors['Main']['Dark Blue Design'] : theme.colors['Main']['Dark Blue Design'],
+            fontWeight: isActive(item.path) ? 700 : 600,
+            pointerEvents: isActive(item.path) ? 'none' : 'auto',
+            cursor: isActive(item.path) ? 'default' : 'pointer',
+          }"
+          @mouseover="hoveredItem = item.name"
           @mouseleave="hoveredItem = null"
         >
           {{ item.name }}
@@ -18,11 +24,11 @@
     </ul>
     <div class="user-section">
       <img class="user-icon" src="../assets/Avatar.png" alt="User Icon" />
-      <router-link 
-        to="/contact" 
-        class="book-now-button" 
-        :style="bookNowButtonStyle" 
-        @mousedown="isPressed = true" 
+      <router-link
+        to="/contact"
+        class="book-now-button"
+        :style="bookNowButtonStyle"
+        @mousedown="isPressed = true"
         @mouseup="isPressed = false"
         @mouseleave="isPressed = false"
       >
@@ -33,7 +39,7 @@
 </template>
 
 <script>
-import theme from '../theme'; // Adjust the path as needed
+import theme from '../theme';
 
 export default {
   name: 'NavbarComp',
@@ -64,6 +70,9 @@ export default {
     isHovered(itemName) {
       return this.hoveredItem === itemName;
     },
+    isActive(route) {
+      return this.$route.path === route;
+    },
   },
 };
 </script>
@@ -82,7 +91,7 @@ export default {
   margin-left: 80px;
   margin-right: 80px;
   margin-bottom: 96px;
-  padding: 0 32px; /* 8 * 4 */
+  padding: 0 32px;
   box-shadow: 0px 3px 8px 0px #0000003D;
   z-index: 2;
 }
@@ -94,22 +103,30 @@ export default {
 
 .nav-links {
   display: flex;
-  gap: 40px; /* gap-10 */
+  gap: 40px;
 }
 
 .nav-link {
-  padding: 8px; /* p-2 */
+  padding: 8px;
   border-radius: 10px;
-  font-size: 1rem; /* text-base */
-  font-weight: 600; /* font-semibold */
+  font-size: 1rem;
+  font-weight: 600;
   line-height: normal;
   transition: background-color 0.3s, color 0.3s;
+  align-items: center;
+}
+
+.active-link {
+  font-weight: 700;
+  pointer-events: none;
+  cursor: default;
+  padding: 8px;
 }
 
 .user-section {
   display: flex;
   align-items: center;
-  gap: 24px; /* gap-6 */
+  gap: 24px;
 }
 
 .user-icon {
@@ -118,10 +135,10 @@ export default {
 }
 
 .book-now-button {
-  padding: 8px; /* p-2 */
+  padding: 8px;
   border-radius: 10px;
-  font-size: 1rem; /* text-base */
-  font-weight: 600; /* font-semibold */
+  font-size: 1rem;
+  font-weight: 600;
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 </style>

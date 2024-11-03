@@ -211,7 +211,7 @@ export default {
     position: absolute;
     width: 460px;
     left: 80px;
-    top: 400px;
+    top: 390px;
     z-index: 1;
 }
 
@@ -298,16 +298,16 @@ export default {
     z-index: 2;
     display: flex;
     flex-direction: row;
-    overflow-x: hidden; /* Prevents scrollbar */
-    overflow-y: hidden; /* Hides vertical scrollbar if needed */
+    overflow-x: hidden;
+    overflow-y: hidden;
     user-select: none;
     cursor: grab;
 }
 .slide-container::-webkit-scrollbar {
-    display: none; /* For Chrome, Safari, and Opera */
+    display: none;
 }
 .slide-container:active {
-    cursor: grabbing; /* Change cursor to grabbing when mouse is down */
+    cursor: grabbing;
 }
 
 .container2 {
