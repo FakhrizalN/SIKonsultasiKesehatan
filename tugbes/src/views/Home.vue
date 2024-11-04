@@ -6,12 +6,12 @@
             <div class="absolute w-[1031px] h-[1031px] bg-[#bbe3ff] rounded-full shadow-lg top-[-491px] left-[1314px]"></div>
             <div class="absolute w-[1004px] h-[1005px] bg-white opacity-70 rounded-full shadow-lg top-[125px] left-[1646px]"></div>
             <div class="absolute w-[908px] h-[908px] bg-[#56B8FF] rounded-full top-[1184px] left-[-188px]"></div>
-            <img class="absolute w-[360px] left-[80px] top-[330px]" src="@/assets/underline.svg" alt="underline" />
+            <img class="absolute w-[441px] left-[80px] top-[385px]" src="@/assets/underline.svg" alt="underline" />
         </div>
-        <div class="flex flex-col gap-8 w-[500px] h-[315px] ml-20 z-20">
+        <div class="flex flex-col gap-8 w-[660px] h-[315px] mt-60 ml-20 z-20">
             <div class="flex flex-col gap-6">
-                <div class="text-5xl font-bold text-[#011632]">Trusted Care For Your Family's Health</div>
-                <div class="text-lg font-normal text-[#3c4959] text-justify">Our experienced team is here to provide quality healthcare you can rely on. Book your appointment today!</div>
+                <div class="text-6xl font-semibold text-[#011632] leading-[74.40px]">Trusted Care For Your Family's Health</div>
+                <div class="w-[531px] text-lg font-normal text-[#3c4959] text-justify leading-7 tracking-tight">Our experienced team is here to provide quality healthcare you can rely on. Book your appointment today!</div>
             </div>
             <div class="flex flex-row gap-8">
                 <Button label="Book an appointment" @click="goToContact" />
@@ -26,10 +26,10 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col gap-8 w-[500px] h-[315px] mb-20 ml-20 z-20">
+        <div class="flex flex-col gap-8 w-[500px] h-[315px] mt-[87px] mb-20 ml-20 z-20">
             <div class="flex flex-col gap-6">
-                <div class="text-5xl font-bold text-[#011632]">Who We Are</div>
-                <div class="text-lg font-normal text-[#3c4959] text-justify">We’re here to provide and give you the best quality healthcare! KimPlus is dedicated to providing comprehensive health solutions. Designed to be your trusted partner in managing health and wellness, KimPlus offers a variety of services, including online consultations, health monitoring, and personalized wellness programs.</div>
+                <div class="text-6xl font-semibold text-[#011632] leading-[74.40px]">Who We Are</div>
+                <div class="w-[531px] text-lg font-normal text-[#3c4959] text-justify leading-7 tracking-tight">We’re here to provide and give you the best quality healthcare! KimPlus is dedicated to providing comprehensive health solutions. Designed to be your trusted partner in managing health and wellness, KimPlus offers a variety of services, including online consultations, health monitoring, and personalized wellness programs.</div>
                 <Button label="Learn More About Us" @click="goToAboutPage" />
             </div>
         </div>
@@ -43,28 +43,31 @@
         </div>
         <div class="w-[442px] h-[452px] flex-col justify-start items-start gap-8 inline-flex z-10 mt-16 ml-20">
             <div class="self-stretch h-52 flex-col justify-start items-start gap-4 flex">
-                <div class="w-[345px] h-[109px] text-white text-[42px] font-semibold font-['General Sans'] capitalize leading-[52.50px]">Why Choose Our Clinic?</div>
+                <div class="w-[345px] h-[109px] text-white text-[42px] font-semibold capitalize leading-[52.50px]">Why Choose Our Clinic?</div>
                 <div class="self-stretch h-[83px] text-justify text-white text-lg font-medium font-['General Sans'] leading-7 tracking-tight">Our clinic provides quality healthcare with a focus on your comfort and needs, supported by modern technology and expert care.</div>
             </div>
-            <div class="self-stretch justify-start items-start gap-[78px] inline-flex flex-col">
-                <div class="gap-8 flex row">
+            <div class="self-stretch justify-start items-start gap-8 inline-flex flex-col">
+                <div class="gap-20 flex row self-stretch">
                     <div class="w-[186px] flex-col justify-start items-start gap-2 inline-flex">
                         <div class="self-stretch text-white text-[42px] font-semibold font-['General Sans'] capitalize leading-[52.50px]">15</div>
                         <div class="self-stretch text-justify text-white text-2xl font-medium font-['General Sans'] capitalize leading-[28.80px]">Best Doctors</div>
                     </div>
-                    <div class="flex-col justify-start items-start gap-2 inline-flex">
+                    <div class="flex-col justify-start items-start gap-2 inline-flex self-stretch">
                         <div class="self-stretch text-white text-[42px] font-semibold font-['General Sans'] capitalize leading-[52.50px]">4</div>
                         <div class="self-stretch text-justify text-white text-2xl font-medium font-['General Sans'] capitalize leading-[28.80px]">Clinic Locations</div>
                     </div>
                 </div>
-                <div class="flex-col justify-start items-start gap-2 inline-flex">
-                    <div class="self-stretch text-white text-[42px] font-semibold font-['General Sans'] capitalize leading-[52.50px]">200+</div>
-                    <div class="self-stretch text-justify text-white text-2xl font-medium font-['General Sans'] capitalize leading-[28.80px]">Patient Capacity</div>
+                <div class="gap-20 flex row self-stretch">
+                    <div class="flex-col justify-start items-start gap-2 inline-flex self-stretch">
+                        <div class="self-stretch text-white text-[42px] font-semibold font-['General Sans'] capitalize leading-[52.50px]">200+</div>
+                        <div class="self-stretch text-justify text-white text-2xl font-medium font-['General Sans'] capitalize leading-[28.80px]">Patient Capacity</div>
+                    </div>
+                    <div class="w-[178px] flex-col justify-start items-start gap-2 inline-flex self-stretch">
+                        <div class="self-stretch text-white text-[42px] font-semibold font-['General Sans'] capitalize leading-[52.50px]">2100+</div>
+                        <div class="self-stretch text-justify text-white text-2xl font-medium font-['General Sans'] capitalize leading-[28.80px]">Patient Cured</div>
+                    </div>
                 </div>
-                <div class="w-[178px] flex-col justify-start items-start gap-2 inline-flex">
-                    <div class="self-stretch text-white text-[42px] font-semibold font-['General Sans'] capitalize leading-[52.50px]">2100+</div>
-                    <div class="self-stretch text-justify text-white text-2xl font-medium font-['General Sans'] capitalize leading-[28.80px]">Patient Cured</div>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -107,7 +110,7 @@ export default {
             const mouseMoveHandler = (e) => {
                 if (!isDown) return;
                 const x = e.pageX - slideContainer.offsetLeft;
-                const walk = (x - startX) * 0.5;
+                const walk = (x - startX) * 1;
                 slideContainer.scrollLeft = scrollLeft - walk;
             };
 

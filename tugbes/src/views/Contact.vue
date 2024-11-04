@@ -2,7 +2,7 @@
   <div class="contact-page gradient-background">
     <Navbar />
 
-    <div class="container mx-auto p-4 flex flex-col items-center">
+    <div class="container mx-auto p-4 flex flex-col items-center mt-60">
       <h1 class="text-4xl font-bold text-center mb-2">Reach Us</h1>
       <p class="text-center mb-8">Book an Appointment to treat your problem right now.</p>
       

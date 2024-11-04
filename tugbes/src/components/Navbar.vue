@@ -1,5 +1,10 @@
 <template>
-  <nav class="flex justify-between items-center h-24 bg-white rounded-lg shadow-lg mx-20 mt-10 mb-24 px-8 z-10">
+  <nav
+    :class="[
+      'fixed top-0 left-0 right-0 flex justify-between items-center h-24 bg-white rounded-lg shadow-lg mx-20 px-8 z-40 transition-transform duration-300',
+      isHidden ? '-translate-y-full' : ' translate-y-10'
+    ]"
+  >
     <div class="flex items-center gap-4">
       <img class="w-[241px] h-[74px]" src="@/assets/LogoName.png" alt="Logo" />
     </div>
@@ -51,6 +56,8 @@ export default {
         { name: 'About', path: '/about' },
         { name: 'Contact', path: '/contact' },
       ],
+      isHidden: false, // Controls navbar visibility
+      lastScrollY: 0, // Tracks the last scroll position
     };
   },
   methods: {
@@ -64,7 +71,26 @@ export default {
       // Define what happens when the "Book Now" button is clicked
       this.$router.push('/contact'); // Redirect to the contact page, or handle as needed
     },
+    handleScroll() {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > this.lastScrollY && currentScrollY > 100) {
+        // Scrolling down and past a threshold
+        this.isHidden = true;
+      } else {
+        // Scrolling up
+        this.isHidden = false;
+      }
+      this.lastScrollY = currentScrollY;
+    }
   },
+  mounted() {
+    // Add scroll event listener
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeUnmount() { // Use beforeUnmount instead of beforeDestroy
+    // Remove scroll event listener on component unmount
+    window.removeEventListener('scroll', this.handleScroll);
+  }
 };
 </script>
 
@@ -73,6 +99,6 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=General+Sans:wght@400;600&display=swap');
 
 .font-general-sans {
-    font-family: 'General Sans', sans-serif;
+  font-family: 'General Sans', sans-serif;
 }
 </style>
