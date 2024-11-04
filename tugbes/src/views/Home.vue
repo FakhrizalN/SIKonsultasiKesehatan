@@ -41,9 +41,31 @@
             <CardInfo icon="laboratory" heading="Laboratory Testing" subtext="Blood, urine, or other fluid tests conducted to assist in diagnosing health conditions" />
             <CardInfo icon="syringe" heading="Child Immunization" subtext="Full vaccination schedule for children to protect them from various diseases." />
         </div>
-        <div class="flex flex-col w-[442px] h-[208px] gap-4 z-20 ml-20 mt-20">
-            <div class=" text-5xl font-semibold text-white">Why Choose Our Clinic?</div>
-            <div class="text-lg font-medium leading-7 tracking-wide text-white">Our clinic provides quality healthcare with a focus on your comfort and needs, supported by modern technology and expert care.</div>
+        <div class="w-[442px] h-[452px] flex-col justify-start items-start gap-8 inline-flex z-10 mt-16 ml-20">
+            <div class="self-stretch h-52 flex-col justify-start items-start gap-4 flex">
+                <div class="w-[345px] h-[109px] text-white text-[42px] font-semibold font-['General Sans'] capitalize leading-[52.50px]">Why Choose Our Clinic?</div>
+                <div class="self-stretch h-[83px] text-justify text-white text-lg font-medium font-['General Sans'] leading-7 tracking-tight">Our clinic provides quality healthcare with a focus on your comfort and needs, supported by modern technology and expert care.</div>
+            </div>
+            <div class="self-stretch justify-start items-start gap-[78px] inline-flex flex-col">
+                <div class="gap-8 flex row">
+                    <div class="w-[186px] flex-col justify-start items-start gap-2 inline-flex">
+                        <div class="self-stretch text-white text-[42px] font-semibold font-['General Sans'] capitalize leading-[52.50px]">15</div>
+                        <div class="self-stretch text-justify text-white text-2xl font-medium font-['General Sans'] capitalize leading-[28.80px]">Best Doctors</div>
+                    </div>
+                    <div class="flex-col justify-start items-start gap-2 inline-flex">
+                        <div class="self-stretch text-white text-[42px] font-semibold font-['General Sans'] capitalize leading-[52.50px]">4</div>
+                        <div class="self-stretch text-justify text-white text-2xl font-medium font-['General Sans'] capitalize leading-[28.80px]">Clinic Locations</div>
+                    </div>
+                </div>
+                <div class="flex-col justify-start items-start gap-2 inline-flex">
+                    <div class="self-stretch text-white text-[42px] font-semibold font-['General Sans'] capitalize leading-[52.50px]">200+</div>
+                    <div class="self-stretch text-justify text-white text-2xl font-medium font-['General Sans'] capitalize leading-[28.80px]">Patient Capacity</div>
+                </div>
+                <div class="w-[178px] flex-col justify-start items-start gap-2 inline-flex">
+                    <div class="self-stretch text-white text-[42px] font-semibold font-['General Sans'] capitalize leading-[52.50px]">2100+</div>
+                    <div class="self-stretch text-justify text-white text-2xl font-medium font-['General Sans'] capitalize leading-[28.80px]">Patient Cured</div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
