@@ -1,37 +1,17 @@
 <template>
-    <div class="askdoctors-page gradient-background">
-      <Navbar />
-    </div>
+  <div class="askdoctors-page bg-gradient-to-b from-[#e6f6fe] via-white to-[#e6f6fe] min-h-screen flex flex-col relative overflow-hidden">
+    <Navbar />
+  </div>
 </template>
-  
+
 <script>
-  import Navbar from '@/components/Navbar.vue';
-  export default {
-    name: 'AskDoctorsPPage',
-    components: {
-        Navbar,
-    }
-  };
+import Navbar from '@/components/Navbar.vue';
+export default {
+  name: 'AskDoctorsPage',
+  components: {
+    Navbar,
+  },
+};
 </script>
 
-<style scoped>
-  .askdoctors-page {
-    position: relative;
-    overflow: hidden;
-    min-height: 100vh;
-    
-  }
-
-  .gradient-background {
-    background: linear-gradient(
-    180deg,
-    rgb(230, 246, 254) 0%,
-    rgb(255, 255, 255) 25%,
-    rgb(255, 255, 255) 75%,
-    rgb(230, 246, 254) 100%
-    );
-    background-color: rgba(255, 255, 255, 1.0);
-    display: flex;
-    flex-direction: column;
-  }
-</style>
+<!-- Tidak ada style tambahan yang diperlukan karena semuanya diatur dengan Tailwind CSS -->
