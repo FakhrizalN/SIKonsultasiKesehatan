@@ -78,8 +78,8 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue';
 import FAQSection from '@/components/Faq.vue';
+import Navbar from '@/components/Navbar.vue';
 
 export default {
   name: 'ContactPage',

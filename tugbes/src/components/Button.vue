@@ -1,6 +1,6 @@
 <template>
-    <div class="button" @click="handleClick">
-        <div class="button-text">{{ label }}</div>
+    <div class="flex items-center justify-center p-2 bg-blue-500 rounded-[10px] shadow-md cursor-pointer z-20" @click="handleClick">
+        <div class="text-white text-base font-semibold font-general-sans leading-normal tracking-tight">{{ label }}</div>
     </div>
 </template>
 
@@ -26,27 +26,10 @@ export default {
 </script>
 
 <style scoped>
-.button {
-    height: 41px;
-    padding: 0.5rem; /* Equivalent to p-2 */
-    background-color: #1376f8;
-    border-radius: 10px; /* Equivalent to rounded-[10px] */
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.24); /* Optional shadow */
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    gap: 0.625rem; /* Equivalent to gap-2.5 */
-    cursor: pointer; /* Pointer cursor on hover */
-    z-index: 2;
-}
+/* Add this if you need to include a custom font */
+@import url('https://fonts.googleapis.com/css2?family=General+Sans:wght@400;600&display=swap');
 
-.button-text {
-    color: white;
-    font-size: 1rem; /* Equivalent to text-base */
-    font-weight: 600; /* Equivalent to font-semibold */
+.font-general-sans {
     font-family: 'General Sans', sans-serif;
-    line-height: normal; /* Resetting line-height */
-    letter-spacing: -0.5px; /* Equivalent to tracking-tight */
 }
 </style>
