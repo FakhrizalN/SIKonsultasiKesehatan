@@ -73,12 +73,13 @@
 
   <!-- FAQ Section -->
   <FAQSection />
-
+  <Footer></Footer>
   </div>
 </template>
 
 <script>
 import FAQSection from '@/components/Faq.vue';
+import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
 
 export default {
@@ -86,6 +87,7 @@ export default {
   components: {
     Navbar,
     FAQSection,
+    Footer,
   },
   data() {
     return {

@@ -22,20 +22,26 @@
         />
       </div>
     </div>
-  </div>
+    </div>
+    <FAQSection />
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
+import DoctorCardComponent from '@/components/DoctorCardComponent.vue';
+import FAQSection from '@/components/Faq.vue';
+import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
 import SidebarComponent from '@/components/SidebarComponent.vue';
-import DoctorCardComponent from '@/components/DoctorCardComponent.vue';
 export default {
   name: 'AskDoctorsPage',
   components: {
     Navbar,
     SidebarComponent,
-    DoctorCardComponent
+    DoctorCardComponent,
+    FAQSection,
+    Footer,
   },
   data() {
     return {

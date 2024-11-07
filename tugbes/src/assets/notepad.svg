@@ -1,0 +1,10 @@
+<svg width="40" height="48" viewBox="0 0 40 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="lucide/notepad-text" clip-path="url(#clip0_291_1434)">
+<path id="Vector" d="M11 1.5V10.5M20 1.5V10.5M29 1.5V10.5M11 19.5H24.5M11 28.5H29M11 37.5H22.25M6.5 6H33.5C35.9853 6 38 8.01472 38 10.5V42C38 44.4853 35.9853 46.5 33.5 46.5H6.5C4.01472 46.5 2 44.4853 2 42V10.5C2 8.01472 4.01472 6 6.5 6Z" stroke="#25B4F8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_291_1434">
+<rect width="40" height="48" fill="white"/>
+</clipPath>
+</defs>
+</svg>

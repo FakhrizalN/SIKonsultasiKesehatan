@@ -12,7 +12,7 @@
       <li v-for="item in navItems" :key="item.name">
         <router-link
           :to="item.path"
-          :class="isActive(item.path) ? 'font-bold' : 'font-semibold'"
+          :class="isActive(item.path) ? 'font-[600]' : 'font-[500]'"
           :style="{
             backgroundColor: isActive(item.path) ? theme.colors['White']['50'] : (isHovered(item.name) ? theme.colors['White']['100'] : 'transparent'),
             color: theme.colors['Main']['Dark Blue Design'],
