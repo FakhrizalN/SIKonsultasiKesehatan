@@ -1,5 +1,5 @@
 <template>
-    <div class="flex items-center justify-center p-2 bg-blue-500 rounded-[10px] shadow-md cursor-pointer z-20" @click="handleClick">
+    <div class="self-stretch flex items-center justify-center p-2 bg-blue-500 rounded-[10px] shadow-md cursor-pointer z-20" @click="handleClick">
         <div class="text-white text-base font-semibold font-general-sans leading-normal tracking-tight">{{ label }}</div>
     </div>
 </template>

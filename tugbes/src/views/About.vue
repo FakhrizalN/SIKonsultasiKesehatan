@@ -2,7 +2,6 @@
   <div class="about-page bg-gradient-to-b from-[#e6f6fe] via-white to-[#e6f6fe] min-h-screen flex flex-col">
     <Navbar />
 
-    <!-- About Us Section -->
     <div class="w-auto h-[634px] gap-32 inline-flex mt-60 mx-20">
       <div class="grow shrink basis-0 self-stretch p-4 justify-start items-start gap-2.5 inline-flex">
         <div class="grow shrink basis-0 flex-col justify-start items-start gap-6 inline-flex">
@@ -15,7 +14,6 @@
       </div>
     </div>
 
-    <!-- Meet Our Company Section -->
     <div class="w-[480px] h-[129px] pr-px flex-col justify-center items-center gap-5 flex mx-auto mt-60">
       <div class="text-center text-[#011632] text-[42px] font-semibold font-['General Sans'] capitalize leading-[52.50px]">Meet our Company</div>
       <div class="w-[479px] text-center text-[#3c4959] text-lg font-normal font-['General Sans'] leading-7 tracking-tight">We use only the best quality materials on the market in order to provide the best products to our patients.</div>
