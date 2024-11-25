@@ -64,6 +64,13 @@
             class="w-[232px]"
             />
           </div>
+            <PhoneInput/>
+            <DatePicker/>
+
+            <TextInput
+            id="message"
+            label="Message"
+            class="w-[498px] h-[185px]"/>
           
           <!-- <form @submit.prevent="submitForm"> -->
             <!-- <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
@@ -98,6 +105,8 @@ import FAQSection from '@/components/Faq.vue';
 import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
 import TextInput from '@/components/TextInput.vue';
+import DatePicker from '@/components/DatePicker.vue';
+import PhoneInput from '@/components/PhoneInput.vue';
 
 export default {
   name: 'ContactPage',
@@ -106,6 +115,8 @@ export default {
     FAQSection,
     Footer,
     TextInput,
+    DatePicker,
+    PhoneInput
   },
   data() {
     return {

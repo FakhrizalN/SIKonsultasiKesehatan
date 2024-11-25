@@ -12,7 +12,7 @@
         :placeholder="placeholder"
         :value="modelValue"
         @input="$emit('update:modelValue', $event.target.value)"
-        class="self-stretch h-[55px] px-4 py-3 rounded-[10px] justify-start items-center inline-flex shadow border focus:outline-none transition-colors duration-300"
+        class="self-stretch grow shrink h-[55px] px-4 py-3 rounded-[10px] justify-start items-center inline-flex shadow border focus:outline-none transition-colors duration-300"
         :class="error ? 'border-red-500' : 'border-gray-200'"
       />
     </div>
