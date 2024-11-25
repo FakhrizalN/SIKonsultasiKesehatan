@@ -32,7 +32,6 @@
           </div>
         </div>
 
-        <!-- Animasi Konten -->
         <div
           v-if="faq.open"
           class="self-stretch justify-center items-center gap-2.5 inline-flex overflow-hidden transition-all duration-300 ease-in-out"

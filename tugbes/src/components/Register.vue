@@ -26,6 +26,7 @@
         placeholder="Enter your name"
         v-model="form.name"
         :error="errors.name"
+        class="w-[498px]"
       />
       <TextInput
         id="email"
@@ -34,6 +35,7 @@
         placeholder="Enter your email"
         v-model="form.email"
         :error="errors.email"
+        class="w-[498px]"
       />
       <TextInput
         id="password"
@@ -42,6 +44,7 @@
         placeholder="Enter your password"
         v-model="form.password"
         :error="errors.password"
+        class="w-[498px]"
       />
       <div class="self-stretch flex flex-col gap-1">
         <div class="flex items-center gap-2">
@@ -119,11 +122,11 @@ export default {
         agree: !this.form.agree,
       };
       this.errors = errors;
-      return !Object.values(errors).includes(true); // Return true if no errors
+      return !Object.values(errors).includes(true);
     },
     handleSignUp() {
       if (this.validateForm()) {
-        this.$emit("closeRegister"); // Close register component if form is valid
+        this.$emit("closeRegister");
       }
     },
   },

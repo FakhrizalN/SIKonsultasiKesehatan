@@ -1,8 +1,8 @@
 <template>
-    <div class="self-stretch flex-col justify-start items-start gap-2.5 flex">
+    <div class="flex-col justify-start items-start gap-2.5 inline-flex">
       <label
         :for="id"
-        class="text-[#3c4959] text-lg font-medium font-['General Sans'] leading-7 tracking-tight"
+        class="self-stretch text-[#3c4959] text-lg font-medium font-['General Sans'] leading-7 tracking-tight"
       >
         {{ label }}
       </label>
@@ -12,7 +12,7 @@
         :placeholder="placeholder"
         :value="modelValue"
         @input="$emit('update:modelValue', $event.target.value)"
-        class="w-[498px] h-[55px] px-4 py-3 rounded-[10px] shadow border focus:outline-none transition-colors duration-300"
+        class="self-stretch h-[55px] px-4 py-3 rounded-[10px] justify-start items-center inline-flex shadow border focus:outline-none transition-colors duration-300"
         :class="error ? 'border-red-500' : 'border-gray-200'"
       />
     </div>
@@ -29,8 +29,8 @@
         default: "text",
       },
       placeholder: String,
-      modelValue: String, // Properti untuk binding
-      error: Boolean, // Properti untuk menampilkan error
+      modelValue: String,
+      error: Boolean,
     },
   };
   </script>

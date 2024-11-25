@@ -7,10 +7,8 @@
       <p class="text-center mb-8">Book an Appointment to treat your problem right now.</p>
       
       <div class="flex flex-col lg:flex-row items-start lg:space-x-8">
-        <!-- Left Side: Address and Contact Info -->
         <div class="bg-white rounded-lg shadow-lg p-6 w-full lg:w-1/2 mb-8 lg:mb-0">
           <div class="mb-4">
-            <!-- Embedded Google Map -->
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.5075422844845!2d116.86166826615573!3d-1.1497141536537987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df149298f826ab5%3A0x8489d5309f45c0db!2sKalimantan%20Institute%20of%20Technology!5e0!3m2!1sen!2sid!4v1730649403527!5m2!1sen!2sid"
               width="100%"
@@ -47,10 +45,28 @@
           </div>
         </div>
 
-        <!-- Right Side: Appointment Form -->
-        <div class="bg-white rounded-lg shadow-lg p-6 w-full lg:w-1/2">
-          <form @submit.prevent="submitForm">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+        <div class="h-[649px] flex-col justify-start items-start gap-4 inline-flex">
+          <div class="h-[93px] justify-start items-center gap-8 inline-flex">
+            <TextInput
+            id="firstName"
+            label="First Name"
+            placeholder="John"
+            v-model="form.firstName"
+            :error="errors.firstName"
+            class="w-[232px]"
+            />
+            <TextInput
+            id="lastName"
+            label="Last Name"
+            placeholder="Doe"
+            v-model="form.lastName"
+            :error="errors.lastName"
+            class="w-[232px]"
+            />
+          </div>
+          
+          <!-- <form @submit.prevent="submitForm"> -->
+            <!-- <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
               <input type="text" v-model="form.firstName" placeholder="First name" class="input-field" required />
               <input type="text" v-model="form.lastName" placeholder="Last name" class="input-field" required />
             </div>
@@ -66,7 +82,7 @@
             <button type="submit" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 w-full">
               Book an appointment
             </button>
-          </form>
+          </form> -->
         </div>
       </div>
     </div>
@@ -81,6 +97,7 @@
 import FAQSection from '@/components/Faq.vue';
 import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
+import TextInput from '@/components/TextInput.vue';
 
 export default {
   name: 'ContactPage',
@@ -88,24 +105,36 @@ export default {
     Navbar,
     FAQSection,
     Footer,
+    TextInput,
   },
   data() {
     return {
       form: {
         firstName: '',
         lastName: '',
-        email: '',
-        phoneNumber: '',
-        date: '',
-        message: ''
-      }
+        // email: '',
+        // phoneNumber: '',
+        // date: '',
+        // message: ''
+      },
+      errors: {
+        firstName: false,
+        lastName: false,
+      },
     };
   },
   methods: {
     submitForm() {
       console.log("Form submitted", this.form);
       alert("Appointment booked successfully!");
-    }
+    },
+    validateForm() {
+      const errors = {};
+      errors.firstName = !this.form.firstName.trim();
+      errors.lastName = !this.form.lastName.trim();
+      this.errors = errors;
+      return !errors.firstName && !errors.lastName;
+    },
   }
 };
 </script>

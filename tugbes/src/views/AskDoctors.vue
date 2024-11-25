@@ -60,4 +60,3 @@ export default {
 };
 </script>
 
-<!-- Tidak ada style tambahan yang diperlukan karena semuanya diatur dengan Tailwind CSS -->

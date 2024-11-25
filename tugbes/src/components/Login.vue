@@ -33,6 +33,7 @@
             placeholder="Enter your email"
             v-model="form.email"
             :error="errors.email"
+            class="w-[498px]"
           />
           <TextInput
             id="password"
@@ -41,6 +42,7 @@
             placeholder="Enter your password"
             v-model="form.password"
             :error="errors.password"
+            class="w-[498px]"
           />
           <div class="justify-start items-start gap-[262px] inline-flex">
             <div class="justify-start items-center gap-[9px] flex">
@@ -106,14 +108,14 @@ export default {
   methods: {
     validateForm() {
       const errors = {};
-      errors.email = !this.form.email.trim(); // Validasi email harus terisi
-      errors.password = !this.form.password.trim(); // Validasi password harus terisi
+      errors.email = !this.form.email.trim();
+      errors.password = !this.form.password.trim();
       this.errors = errors;
-      return !errors.email && !errors.password; // True jika validasi berhasil
+      return !errors.email && !errors.password;
     },
     handleLogin() {
       if (this.validateForm()) {
-        this.$emit("closeLogin"); // Emit event untuk menutup login
+        this.$emit("closeLogin");
       }
     },
   },
