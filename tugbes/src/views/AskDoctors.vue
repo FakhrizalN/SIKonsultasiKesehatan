@@ -6,23 +6,26 @@
       <div class="w-full text-center text-[#3c4959] text-lg font-normal leading-7 tracking-tight">Quickly connect with our qualified doctors to ask health questions and receive expert advice without an appointment.</div>
     </div>
 
-    <div class="flex space-x-6 p-6">
+    <div class="flex space-x-6 p-0 mx-20 mt-12">
       <SidebarComponent @category-selected="onCategorySelected" />
 
-      <div class="flex flex-col space-y-4 w-full">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-          <DoctorCardComponent
-            v-for="doctor in filteredDoctors"
-            :key="doctor.name"
-            :name="doctor.name"
-            :specialty="doctor.specialty"
-            :rating="doctor.rating"
-            :experience="doctor.experience"
-            :image="doctor.image"
-          />
+      <div class="bg-white rounded-lg shadow flex flex-col space-y-4 w-full">
+        <div class=" doctor-list-wrapper max-h-[815px] overflow-y-auto p-4">
+          <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
+            <DoctorCardComponent
+              v-for="doctor in filteredDoctors"
+              :key="doctor.name"
+              :name="doctor.name"
+              :specialty="doctor.specialty"
+              :rating="doctor.rating"
+              :experience="doctor.experience"
+              :image="doctor.image"
+            />
+          </div>
         </div>
       </div>
     </div>
+
     <FAQSection />
     <Footer />
   </div>
@@ -60,24 +63,30 @@ export default {
           { name: 'Dr. Fahrezi Kurama', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
           { name: 'Dr. Fahrezi Kurama', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
           { name: 'Dr. Fahrezi Kurama', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
-
-          
+          { name: 'Dr. Fahrezi Kurama', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
+          { name: 'Dr. Fahrezi Kurama', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
+          { name: 'Dr. Fahrezi Kurama', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
+          { name: 'Dr. Fahrezi Kurama', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
+          { name: 'Dr. Fahrezi Kurama', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
+          { name: 'Dr. Fahrezi Kurama', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
+          { name: 'Dr. Fahrezi Kurama', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
+          { name: 'Dr. Fahrezi Kurama', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
+          { name: 'Dr. Fahrezi Kurama', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
+          // More doctors for 'General Practitioner'
         ],
         'Pediatrician': [
           { name: 'Dr. Sakura Wati', specialty: 'Pediatrician', rating: 85, experience: 4, image: 'https://via.placeholder.com/70' },
-          // Add more doctors for 'Pediatrician'
+          // More doctors for 'Pediatrician'
         ],
-        // Add more categories as needed
+        // Additional categories...
       },
     };
   },
   computed: {
     filteredDoctors() {
       if (this.selectedCategory === 'All') {
-        // Gabungkan semua dokter dari semua kategori
         return Object.values(this.doctorsByCategory).flat();
       }
-      // Ambil dokter berdasarkan kategori yang dipilih
       return this.doctorsByCategory[this.selectedCategory];
     }
   },
@@ -88,4 +97,3 @@ export default {
   }
 };
 </script>
-

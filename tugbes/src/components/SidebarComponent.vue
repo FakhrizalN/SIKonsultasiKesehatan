@@ -1,5 +1,5 @@
 <template>
-    <div class="width[245px] p-8 bg-white rounded-[10px] shadow flex flex-col items-start gap-4 self-stretch ml-20">
+    <div class="width[245px] p-8 bg-white rounded-[10px] shadow flex flex-col items-start gap-4 self-stretch">
       <button
         v-for="category in categories"
         :key="category"
