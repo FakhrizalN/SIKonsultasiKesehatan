@@ -37,6 +37,7 @@
     methods: {
       selectCategory(category) {
         this.selectedCategory = category;
+        this.$emit('category-selected', category);
       }
     }
   };

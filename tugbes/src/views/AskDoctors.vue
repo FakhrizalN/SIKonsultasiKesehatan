@@ -7,24 +7,24 @@
     </div>
 
     <div class="flex space-x-6 p-6">
-    <SidebarComponent />
+      <SidebarComponent @category-selected="onCategorySelected" />
 
-    <div class="flex flex-col space-y-4 w-full">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-        <DoctorCardComponent
-          v-for="doctor in doctors"
-          :key="doctor.name"
-          :name="doctor.name"
-          :specialty="doctor.specialty"
-          :rating="doctor.rating"
-          :experience="doctor.experience"
-          :image="doctor.image"
-        />
+      <div class="flex flex-col space-y-4 w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+          <DoctorCardComponent
+            v-for="doctor in filteredDoctors"
+            :key="doctor.name"
+            :name="doctor.name"
+            :specialty="doctor.specialty"
+            :rating="doctor.rating"
+            :experience="doctor.experience"
+            :image="doctor.image"
+          />
+        </div>
       </div>
     </div>
-    </div>
     <FAQSection />
-    <Footer></Footer>
+    <Footer />
   </div>
 </template>
 
@@ -34,6 +34,7 @@ import FAQSection from '@/components/Faq.vue';
 import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
 import SidebarComponent from '@/components/SidebarComponent.vue';
+
 export default {
   name: 'AskDoctorsPage',
   components: {
@@ -45,18 +46,34 @@ export default {
   },
   data() {
     return {
-      doctors: [
-        { name: 'Dr. Wellsy Pianis', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
-        { name: 'Dr. Fahrezi Kurama', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
-        { name: 'Dr. Kusuma Sinaga', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
-        { name: 'Dr. Yudi Wahyudi', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
-        { name: 'Dr. Kazuha Niagara', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
-        { name: 'Dr. Sakura Wati', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
-        { name: 'Dr. Riocard Aldo', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
-        { name: 'Dr. Nazal Waranto', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
-      ]
+      selectedCategory: 'All',  // Default category
+      doctorsByCategory: {
+        'All': [
+          { name: 'Dr. Wellsy Pianis', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
+          { name: 'Dr. Fahrezi Kurama', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
+          // Add more doctors for 'All'
+        ],
+        'General Practitioner': [
+          { name: 'Dr. Wellsy Pianis', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
+          // Add more doctors for 'General Practitioner'
+        ],
+        'Pediatrician': [
+          { name: 'Dr. Sakura Wati', specialty: 'Pediatrician', rating: 85, experience: 4, image: 'https://via.placeholder.com/70' },
+          // Add more doctors for 'Pediatrician'
+        ],
+        // Add more categories as needed
+      },
     };
+  },
+  computed: {
+    filteredDoctors() {
+      return this.doctorsByCategory[this.selectedCategory];
+    }
+  },
+  methods: {
+    onCategorySelected(category) {
+      this.selectedCategory = category;
+    }
   }
 };
 </script>
-

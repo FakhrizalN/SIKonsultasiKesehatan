@@ -35,13 +35,11 @@
       </div>
     </nav>
 
-    <!-- Background Overlay for Login -->
     <div
       v-if="isLoginVisible"
       class="fixed inset-0 bg-white bg-opacity-40 z-50 flex items-center justify-center"
       @click="toggleLogin"
     >
-      <!-- Login Popup -->
       <div
         :class="[ 
           'shadow-lg transition-all',
@@ -54,13 +52,11 @@
       </div>
     </div>
 
-    <!-- Background Overlay for Register -->
     <div
       v-if="isRegisterVisible"
       class="fixed inset-0 bg-white bg-opacity-40 z-50 flex items-center justify-center"
       @click="toggleRegister"
     >
-      <!-- Register Popup -->
       <div
         :class="[
           'shadow-lg transition-all',

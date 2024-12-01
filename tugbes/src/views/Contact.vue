@@ -1,12 +1,12 @@
 <template>
-  <div class="contact-page gradient-background">
+  <div class="contact-page bg-gradient-to-b from-[#e6f6fe] via-white to-[#e6f6fe] min-h-screen flex flex-col relative overflow-hidden">
     <Navbar />
 
     <div class="container mx-auto p-4 flex flex-col items-center mt-60">
-      <h1 class="text-4xl font-bold text-center mb-2">Reach Us</h1>
-      <p class="text-center mb-8">Book an Appointment to treat your problem right now.</p>
+      <div class="text-center text-[#011632] text-[62px] font-semibold font-['General Sans'] capitalize leading-[74.40px]">Reach Us</div>
+      <div class="text-center text-[#3c4959] text-lg font-normal font-['General Sans'] leading-7 tracking-tight">Book an Appointment to treat your problem right now.</div>
       
-      <div class="flex flex-col lg:flex-row items-start lg:space-x-8">
+      <div class="flex flex-col mt-24 lg:flex-row items-start lg:space-x-8">
         <div class="bg-white rounded-lg shadow-lg p-6 w-full lg:w-1/2 mb-8 lg:mb-0">
           <div class="mb-4">
             <iframe
@@ -48,65 +48,58 @@
         <div class="h-[649px] flex-col justify-start items-start gap-4 inline-flex">
           <div class="h-[93px] justify-start items-center gap-8 inline-flex">
             <TextInput
-            id="firstName"
-            label="First Name"
-            placeholder="John"
-            v-model="form.firstName"
-            :error="errors.firstName"
-            class="w-[232px]"
+              id="firstName"
+              label="First Name"
+              placeholder="John"
+              v-model="form.firstName"
+              :error="errors.firstName"
+              class="w-[232px]"
             />
             <TextInput
-            id="lastName"
-            label="Last Name"
-            placeholder="Doe"
-            v-model="form.lastName"
-            :error="errors.lastName"
-            class="w-[232px]"
+              id="lastName"
+              label="Last Name"
+              placeholder="Doe"
+              v-model="form.lastName"
+              :error="errors.lastName"
+              class="w-[232px]"
             />
           </div>
-            <PhoneInput/>
-            <DatePicker/>
+            <PhoneInput v-model="form.phoneNumber" :error="errors.phoneNumber" />
+            <DatePicker 
+              id="appointment"
+              label="Select Appointment Date and Time"
+              v-model="appointmentDateTime"
+              :error="errors.appointmentDateTime"
+              class="w-full"
+            />
 
             <TextInput
-            id="message"
-            label="Message"
-            class="w-[498px] h-[185px]"/>
-          
-          <!-- <form @submit.prevent="submitForm"> -->
-            <!-- <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-              <input type="text" v-model="form.firstName" placeholder="First name" class="input-field" required />
-              <input type="text" v-model="form.lastName" placeholder="Last name" class="input-field" required />
-            </div>
+              id="message"
+              type="textarea"
+              label="Message"
+              class="w-[498px] h-[185px]"
+              placeholder="Include a message..."
+              v-model="form.message"
+            />
 
-            <input type="email" v-model="form.email" placeholder="Email" class="input-field w-full mb-4" required />
-            <input type="tel" v-model="form.phoneNumber" placeholder="+62 000-000-0000" class="input-field w-full mb-4" required />
-
-            <label for="date" class="block mb-2">Select date</label>
-            <input type="date" v-model="form.date" id="date" class="input-field w-full mb-4" required />
-
-            <textarea v-model="form.message" placeholder="Message" rows="4" class="input-field w-full mb-4" required></textarea>
-
-            <button type="submit" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 w-full">
-              Book an appointment
-            </button>
-          </form> -->
+            <Button label="Submit" @click="validateForm"></Button>
         </div>
       </div>
     </div>
 
-  <!-- FAQ Section -->
   <FAQSection />
   <Footer></Footer>
   </div>
 </template>
 
 <script>
+import Button from '@/components/Button.vue';
+import DatePicker from '@/components/DatePicker.vue';
 import FAQSection from '@/components/Faq.vue';
 import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
-import TextInput from '@/components/TextInput.vue';
-import DatePicker from '@/components/DatePicker.vue';
 import PhoneInput from '@/components/PhoneInput.vue';
+import TextInput from '@/components/TextInput.vue';
 
 export default {
   name: 'ContactPage',
@@ -116,75 +109,51 @@ export default {
     Footer,
     TextInput,
     DatePicker,
-    PhoneInput
+    PhoneInput,
+    Button
   },
   data() {
     return {
       form: {
         firstName: '',
         lastName: '',
-        // email: '',
-        // phoneNumber: '',
-        // date: '',
-        // message: ''
+        email: '',
+        phoneNumber: '',
+        message: ''
       },
       errors: {
         firstName: false,
         lastName: false,
+        phoneNumber: false,
+        appointmentDateTime: false,
       },
+      appointmentDateTime: "",
+      hasError: false
     };
   },
   methods: {
+    validateForm() {
+      const errors = {};
+
+      errors.firstName = !this.form.firstName.trim();
+      errors.lastName = !this.form.lastName.trim();
+
+      const phoneRegex = /^[0-9]{10,15}$/;
+      errors.phoneNumber = !phoneRegex.test(this.form.phoneNumber);
+
+      errors.appointmentDateTime = !this.appointmentDateTime;
+
+      this.errors = errors;
+
+      if (!errors.firstName && !errors.lastName && !errors.phoneNumber && !errors.appointmentDateTime) {
+        this.submitForm();
+      }
+    },
     submitForm() {
       console.log("Form submitted", this.form);
       alert("Appointment booked successfully!");
-    },
-    validateForm() {
-      const errors = {};
-      errors.firstName = !this.form.firstName.trim();
-      errors.lastName = !this.form.lastName.trim();
-      this.errors = errors;
-      return !errors.firstName && !errors.lastName;
     },
   }
 };
 </script>
 
-<style scoped>
-.contact-page {
-  position: relative;
-  overflow: hidden;
-  min-height: 100vh;
-}
-
-.gradient-background {
-  background: linear-gradient(
-    180deg,
-    rgb(230, 246, 254) 0%,
-    rgb(255, 255, 255) 25%,
-    rgb(255, 255, 255) 75%,
-    rgb(230, 246, 254) 100%
-  );
-  background-color: rgba(255, 255, 255, 1.0);
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  max-width: 1200px;
-}
-
-.input-field {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 0.5rem;
-  width: 100%;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.3s;
-}
-
-.input-field:focus {
-  border-color: #3182ce;
-}
-</style>
