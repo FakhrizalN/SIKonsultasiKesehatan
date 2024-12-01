@@ -15,11 +15,13 @@
           </div>
         </div>
       </div>
-      <button class="bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold text-sm">Chat</button>
+      <Button label="Chat"></Button>
+      <!-- <button class="bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold text-sm">Chat</button> -->
     </div>
   </template>
   
   <script>
+  import Button from './Button.vue';
   export default {
     props: {
       name: String,
@@ -27,6 +29,9 @@
       rating: Number,
       experience: Number,
       image: String,
+    },
+    components:{
+      Button,
     }
   };
   </script>

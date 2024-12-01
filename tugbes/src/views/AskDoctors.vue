@@ -48,13 +48,9 @@ export default {
     return {
       selectedCategory: 'All',  // Default category
       doctorsByCategory: {
-        'All': [
-          { name: 'Dr. Wellsy Pianis', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
-          { name: 'Dr. Fahrezi Kurama', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
-          // Add more doctors for 'All'
-        ],
         'General Practitioner': [
           { name: 'Dr. Wellsy Pianis', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
+          { name: 'Dr. Fahrezi Kurama', specialty: 'General Practitioner', rating: 90, experience: 3, image: 'https://via.placeholder.com/70' },
           // Add more doctors for 'General Practitioner'
         ],
         'Pediatrician': [
@@ -67,6 +63,11 @@ export default {
   },
   computed: {
     filteredDoctors() {
+      if (this.selectedCategory === 'All') {
+        // Gabungkan semua dokter dari semua kategori
+        return Object.values(this.doctorsByCategory).flat();
+      }
+      // Ambil dokter berdasarkan kategori yang dipilih
       return this.doctorsByCategory[this.selectedCategory];
     }
   },
@@ -77,3 +78,4 @@ export default {
   }
 };
 </script>
+
