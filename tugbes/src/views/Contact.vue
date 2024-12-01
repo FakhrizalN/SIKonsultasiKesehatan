@@ -64,10 +64,16 @@
               class="w-[232px]"
             />
           </div>
-            <PhoneInput v-model="form.phoneNumber" :error="errors.phoneNumber" />
+            <PhoneInput 
+            id="phone"
+            label="Phone"
+            placeholder="+62 800-0000-0000"
+            v-model="form.phoneNumber" 
+            :error="errors.phoneNumber" />
+
             <DatePicker 
               id="appointment"
-              label="Select Appointment Date and Time"
+              label="Select Date & Time"
               v-model="appointmentDateTime"
               :error="errors.appointmentDateTime"
               class="w-full"

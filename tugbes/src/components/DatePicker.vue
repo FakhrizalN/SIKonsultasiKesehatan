@@ -34,7 +34,7 @@ export default {
     },
     label: {
       type: String,
-      default: "Select date and time",
+      default: "",
     },
     modelValue: {
       type: String,

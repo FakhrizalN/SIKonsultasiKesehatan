@@ -40,11 +40,11 @@ export default {
     },
     label: {
       type: String,
-      default: "Phone number",
+      default: "",
     },
     placeholder: {
       type: String,
-      default: "+62 000-000-0000",
+      default: "",
     },
     countryCode: {
       type: String,
