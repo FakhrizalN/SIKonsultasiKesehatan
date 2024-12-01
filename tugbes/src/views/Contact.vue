@@ -7,8 +7,7 @@
       <div class="text-center text-[#3c4959] text-lg font-normal font-['General Sans'] leading-7 tracking-tight">Book an Appointment to treat your problem right now.</div>
       
       <div class="flex flex-col mt-24 lg:flex-row items-start lg:space-x-8">
-        <div class="bg-white rounded-lg shadow-lg p-6 w-full lg:w-1/2 mb-8 lg:mb-0">
-          <div class="mb-4">
+        <div class="w-full lg:w-1/2 mb-8 lg:mb-0 flex flex-col gap-4">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.5075422844845!2d116.86166826615573!3d-1.1497141536537987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df149298f826ab5%3A0x8489d5309f45c0db!2sKalimantan%20Institute%20of%20Technology!5e0!3m2!1sen!2sid!4v1730649403527!5m2!1sen!2sid"
               width="100%"
@@ -18,31 +17,26 @@
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
-
-            <p class="text-lg font-semibold mt-4">Office Address</p>
-            <p>Jl. Soekarno Hatta RT.21 Km.12</p>
-          </div>
-          
-          <div class="mb-4">
-            <p class="text-lg font-semibold">Office Timings</p>
-            <p>Monday - Saturday (9:00am to 5pm)</p>
-            <p>Sunday (Closed)</p>
-          </div>
-
-          <div class="mb-4">
-            <p class="text-lg font-semibold">Email Address</p>
-            <p>dkk_bppn@balikpapan.go.id</p>
-          </div>
-          
-          <div class="mb-4">
-            <p class="text-lg font-semibold">Phone Number</p>
-            <p>(0542) 8705760</p>
-          </div>
-          
-          <div>
-            <p class="text-lg font-semibold">Our Website</p>
-            <p><a href="http://dkk.balikpapan.go.id/page/puskesmas" class="text-blue-500">dkk.balikpapan.go.id/page/puskesmas</a></p>
-          </div>
+            <Label
+              label="Office Address"
+              description="Jl. Soekarno Hatta RT.21 Km.12"
+              icon="pin"
+            ></Label>
+            <Label
+              label="Office Timings"
+              description="Monday - Saturday (9:00am to 5pm)<br/>Sunday (Closed)"
+              icon="clock"
+            ></Label>
+            <Label
+              label="Email Address"
+              description="dkk_bppn@balikpapan.go.id"
+              icon="mail"
+            ></Label>
+            <Label
+              label="Phone Number"
+              description="(0542) 8705760"
+              icon="phone"
+            ></Label>
         </div>
 
         <div class="h-[649px] flex-col justify-start items-start gap-4 inline-flex">
@@ -103,6 +97,7 @@ import Button from '@/components/Button.vue';
 import DatePicker from '@/components/DatePicker.vue';
 import FAQSection from '@/components/Faq.vue';
 import Footer from '@/components/Footer.vue';
+import Label from '@/components/Label.vue';
 import Navbar from '@/components/Navbar.vue';
 import PhoneInput from '@/components/PhoneInput.vue';
 import TextInput from '@/components/TextInput.vue';
@@ -116,7 +111,8 @@ export default {
     TextInput,
     DatePicker,
     PhoneInput,
-    Button
+    Button,
+    Label
   },
   data() {
     return {
